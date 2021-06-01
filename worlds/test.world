@@ -1,0 +1,20 @@
+<!--Este archivo sirve como un template para la generación de mundos, uselo para hacer pruebas si quiere-->
+
+<?xml version="1.0" ?>
+<sdf version="1.7">
+  <world name="default">
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <include>
+      <uri>model://box_and_kinect</uri>
+      <pose>0 0 0 0 0 0 </pose>
+    </include>
+
+
+  </world>
+</sdf>

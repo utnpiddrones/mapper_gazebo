@@ -1,0 +1,34 @@
+<launch>
+    <!-- Inicio la simulación-->
+    <!--Puede cambiar el mundo a ejecutar cambiando el archivo my_world-->
+    <include file="$(find mapper_gazebo)/launch/my_world.launch">
+        <!-- Modifique este valor si quiere ejecutar la interfaz gráfica de Gazebo-->
+        <arg name="enable_gui" value="false" />
+    </include>
+
+    <!-- Creo el frame estático entre "base_link" y "camera_link"-->
+    <include file="$(find mapper_gazebo)/launch/static_frame.launch" />
+
+    <!-- Inicio el rtabmap, con los parámetros que quiero, revise el archivo que estoy incluyendo para ver
+    los parámetros y cuáles otros se pueden modificar-->
+    <include file="$(find rtabmap_ros)/launch/rtabmap.launch">
+        <!--Elijo la visualización-->
+        <arg name="rtabmapviz" value="true" />
+        <arg name="rviz" value="false" />
+
+        <!--Sin datos de mapeo previos-->
+        <arg name="args" value="-d" />
+
+        <!--Topics donde publican los datos la cámara-->
+        <arg name="rgb_topic" value="/camera/rgb/image_rect_color" />
+        <arg name="depth_topic" value="/camera/depth_registered/image_raw" />
+        <arg name="camera_info_topic" value="/camera/rgb/camera_info" />
+        <arg name="depth_camera_info_topic" value="/camera/depth/camera_info" />
+
+        <!--Topic de odometría-->
+        <arg name="odom_topic" value="odom" />
+
+        <!--Nombre del frame del robot-->
+        <arg name="frame_id" value="base_link" />
+    </include>
+</launch>
