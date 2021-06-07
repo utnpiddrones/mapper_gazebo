@@ -1,3 +1,5 @@
+<?xml version="1.0" ?>
+
 <!-- Este archivo es solo una simulación de prueba, creada usando la GUI de Gazebo y luego agregando de forma
       manual mi modelo. La parte de agregar de forma manual es importante. Si no lo hace, el modelo que se
       cargue en su mundo será una "copia" del modelo que tenemos definido, y no podrá modificarlo a voluntad -->

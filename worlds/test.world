@@ -1,7 +1,6 @@
-<!--Este archivo sirve como un template para la generación de mundos, uselo para hacer pruebas si quiere-->
-
 <?xml version="1.0" ?>
 <sdf version="1.7">
+  <!--Este archivo sirve como un template para la generación de mundos, uselo para hacer pruebas si quiere-->
   <world name="default">
     <include>
       <uri>model://ground_plane</uri>

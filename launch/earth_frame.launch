@@ -1,0 +1,4 @@
+<!--Frame estático declarado en el tree frame-->
+<launch>
+    <node pkg="tf2_ros" type="static_transform_publisher" name="earth_broadcaster" args="0 0 0 0 0 0 earth map" /> 
+</launch>
