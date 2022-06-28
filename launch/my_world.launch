@@ -1,0 +1,13 @@
+<launch>
+  <!--Configurada desde el roslaunch global-->
+  <arg name="enable_gui" default="true" />
+  <arg name="world" default="mapper" />
+
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+
+    <!--Aca puede cambiar el archivo .world que desea ejecutar, y ponerle parámetros a la suimulación-->
+    <arg name="world_name" value="$(find mapper_gazebo)/worlds/$(arg world).world"/>
+    <arg name="gui" value="$(arg enable_gui)"/> 
+  </include>
+</launch>
